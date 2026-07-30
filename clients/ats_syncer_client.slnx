@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="ATS Syncer Client.vcxproj" Id="e97476ae-5834-41bb-99a5-efc20b712844" />
+</Solution>
