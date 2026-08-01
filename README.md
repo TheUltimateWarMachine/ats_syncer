@@ -2,6 +2,7 @@
 ### Server Installation
 1. `git clone` the repository to a folder on your server. You may optionally remove the `clients/` directory.
 2. Edit `auth.php` and add your username/password combinations. By default, each of these fields has to be <= 16 characters. The username key can only contain letters and each password value must be alphanumeric. Add any administrator-level users to the array.
+3. Make sure your web server has permissions to write to each of the storage files. `chmod -R 777` stuff that doesn't comply.
 ### Client Configuration
 1. `git clone` the repository to a local folder.
 2. You may optionally remove the `server/` directory
