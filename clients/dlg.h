@@ -323,6 +323,7 @@ INT_PTR CALLBACK ConflictsDlgProc(HWND hDlg, UINT msg, WPARAM wParam, LPARAM lPa
 		}
 		SetWindowLongPtr(hDlg, GWLP_USERDATA, (LONG_PTR)meta);
 		EnableWindow(GetDlgItem(hDlg, IDC_CONFLICT_UPDATE), meta->uploading_allowed);
+		EnableWindow(GetDlgItem(hDlg, IDC_CONFLICT_UPDATEALL), meta->uploading_allowed);
 		INT pos;
 		for (UINT i = 0; i < meta->n_sectors; i++) {
 			if (strlen(meta->sectors[i]) > MAX_SECTORNAME_SIZE) {
