@@ -965,7 +965,7 @@ INT_PTR CALLBACK GuardDlg(HWND hDlg, UINT msg, WPARAM wParam, LPARAM lParam) {
 			if (LOWORD(wParam) == IDC_GUARD_ADD) sprintf_s(url_buf, ARRAYSIZE(url_buf), "%s/sector_guard/?usr=%s&pwd=%s&ver=%s&action=add", host_base, usr, pwd, PROGRAM_VER);
 			else sprintf_s(url_buf, ARRAYSIZE(url_buf), "%s/sector_guard/?usr=%s&pwd=%s&ver=%s&action=del", host_base, usr, pwd, PROGRAM_VER);
 			GUARDDLG_VALIDATE_SECTOR_INPUT_INTO(buf);
-			http_response_t resp = send_http_post((LPCSTR)url_buf, (LPCSTR)buf, strlen((LPCSTR)buffer), (LPCSTR)NULL, DEFAULT_HTTP_TIMEOUT);
+			http_response_t resp = send_http_post((LPCSTR)url_buf, (LPCSTR)buf, strlen((LPCSTR)buf), (LPCSTR)NULL, DEFAULT_HTTP_TIMEOUT);
 			if (resp.errored) {
 				MessageBoxA(hDlg, "Client request to modify the In-Use sector list failed to reach the server's handler.", "In-Use Sector List Modification Error", MB_OK | MB_ICONERROR);
 				return (INT_PTR)TRUE;
