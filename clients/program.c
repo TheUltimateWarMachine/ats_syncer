@@ -1,5 +1,5 @@
 #define _CRT_SECURE_NO_WARNINGS
-#define PROGRAM_VER "0.1" //Keep < 8 characters.
+#define PROGRAM_VER "0.2" //Keep < 8 characters.
 #pragma comment(lib, "comctl32.lib")
 #pragma comment(lib, "bcrypt.lib")
 #pragma comment(lib, "crypt32.lib")
