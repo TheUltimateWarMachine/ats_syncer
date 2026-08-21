@@ -7,7 +7,7 @@ function formatted_now_date() : string {
 
 function authenticate() : bool {
     global $is_administrator;
-    $curr_ver = "0.1";
+    $curr_ver = "0.2";
     //Any users not included will not have access to the sector guard.
     //Change these:
     $administrators = [
@@ -24,7 +24,10 @@ function authenticate() : bool {
     $pwd = $_GET["pwd"];
     $ver = $_GET["ver"];
     if(!isset($usr) || !isset($pwd) || !isset($ver)) return false;
-    if(strcmp($ver, $curr_ver)) return false;
+    if(strcmp($ver, $curr_ver)) {
+        echo "-Invalid credentials: You're on version $ver while the server is on version $curr_ver!";
+        return false;
+    };
     $checked = $valid_combos[$usr];
     $is_administrator = in_array($usr, $administrators);
     return isset($checked) && !strcmp($checked, $pwd);
